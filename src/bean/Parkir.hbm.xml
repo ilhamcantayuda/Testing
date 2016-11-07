@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 24, 2016 5:01:12 PM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="bean.Parkir" table="parkir" catalog="test">
+        <id name="kartuParkir" type="string">
+            <column name="kartu_parkir" length="10" />
+            <generator class="assigned" />
+        </id>
+        <property name="tglParkir" type="date">
+            <column name="tgl_parkir" length="10" not-null="true" />
+        </property>
+        <property name="platNomer" type="string">
+            <column name="plat_nomer" length="10" not-null="true" />
+        </property>
+        <property name="nim" type="string">
+            <column name="nim" length="10" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

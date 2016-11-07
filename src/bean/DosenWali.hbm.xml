@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 24, 2016 5:01:12 PM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="bean.DosenWali" table="dosen_wali" catalog="test">
+        <id name="nik" type="string">
+            <column name="nik" length="10" />
+            <generator class="assigned" />
+        </id>
+        <property name="nama" type="string">
+            <column name="nama" length="100" not-null="true" />
+        </property>
+        <property name="alamat" type="string">
+            <column name="alamat" length="100" not-null="true" />
+        </property>
+        <set name="mahasiswas" table="mahasiswa" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="nik" length="10" not-null="true" />
+            </key>
+            <one-to-many class="bean.Mahasiswa" />
+        </set>
+    </class>
+</hibernate-mapping>
